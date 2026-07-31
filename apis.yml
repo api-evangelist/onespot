@@ -1,7 +1,23 @@
 aid: onespot
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/onespot.png
 name: OneSpot
-description: OneSpot is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: OneSpot was an Austin, Texas adtech and content-marketing startup that built a machine-learning
+  platform to personalize and sequence branded content across websites, email, and paid media. Founded
+  around 2010 and backed by early investors including 500 Startups, RSL Venture Partners, and Austin angels,
+  it raised multiple venture rounds before being acquired. The onespot.com domain (and its developer, api,
+  and app subdomains) now redirects to IgniteTech, and the company no longer operates an independent public
+  developer API, documentation, or SDK surface.
 url: https://raw.githubusercontent.com/api-evangelist/onespot/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,11 +25,19 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-status: acquired-no-api-surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- AdTech
+- Content Marketing
+- Marketing Technology
+- Personalization
+- Advertising
+- Machine Learning
+- Austin
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +47,8 @@ maintainers:
 common:
 - type: Website
   url: https://onespot.com
+x-enrichment:
+  date: '2026-07-20'
+  status: nochange
+  artifacts_added: 0
+  pass: local-v1
