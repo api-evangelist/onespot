@@ -1,0 +1,15 @@
+generated: '2026-08-12'
+method: probed
+source: https://onespot.com/pricing
+plan_count: 0
+plans: []
+note: >-
+  OneSpot publishes no plans or pricing. The company was acquired and the onespot.com domain now
+  answers HTTP 302 to https://ignitetech.ai/ on every path, including /pricing and /plans, so there
+  is no pricing page to read. IgniteTech's own software library does not list OneSpot as a current
+  product (searched ignitetech.ai and its WordPress search endpoint — zero matches), so the product
+  is not being resold under the acquirer's brand either.
+evidence:
+- {url: 'https://onespot.com/pricing', status: 302, redirect_to: 'https://ignitetech.ai/'}
+- {url: 'https://onespot.com/plans', status: 302, redirect_to: 'https://ignitetech.ai/'}
+- {url: 'https://ignitetech.ai/wp-json/wp/v2/search?search=onespot', status: 200, result: 'empty array'}

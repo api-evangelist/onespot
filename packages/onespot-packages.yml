@@ -1,0 +1,31 @@
+generated: '2026-08-12'
+method: searched
+source: registry.npmjs.org search + registry metadata
+official_count: 0
+note: >-
+  No first-party OneSpot client library exists on npm, PyPI, RubyGems, crates.io, NuGet, Maven
+  Central or pkg.go.dev. The npm name-space matches for "onespot" belong to unrelated projects
+  (a Vue CLI template family, a UI kit) and are not this company. The single package that genuinely
+  wraps this OneSpot is Segment's analytics.js destination integration — third-party, authored and
+  published by Segment, not by OneSpot — and it is the clearest decay signal available here: its
+  last release was 2021-07-12, and the CloudFront host its tag loads (d3xl0zyjyljwa.cloudfront.net)
+  no longer resolves in DNS, so the integration is inert even for anyone who still has it installed.
+  No `SDKs` pointer is emitted: there is no official client library to count.
+packages:
+- language: javascript
+  registry: npm
+  name: "@segment/analytics.js-integration-onespot"
+  url: https://www.npmjs.com/package/@segment/analytics.js-integration-onespot
+  install: npm install @segment/analytics.js-integration-onespot
+  official: false
+  publisher: Segment
+  version: 2.0.1
+  published: '2021-07-12'
+  repository: https://github.com/segmentio/analytics.js-integrations
+  note: >-
+    Third-party Segment destination wrapper, not a OneSpot SDK and not an API client — it only
+    injects OneSpot's page tag (`//d3xl0zyjyljwa.cloudfront.net/px/t/os-{accountId}-0.js`) and
+    exposes a single `accountId` option. That CloudFront hostname returns NXDOMAIN as of
+    2026-08-12, so the loader points at nothing. Attribution to this OneSpot is inferred from the
+    package description ("The Onespot analytics.js integration") and the ad-tech pixel shape;
+    OneSpot's own surface is gone, so it cannot be confirmed against first-party docs.

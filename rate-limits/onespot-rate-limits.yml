@@ -1,0 +1,14 @@
+generated: '2026-08-12'
+method: probed
+source: https://onespot.com/developers
+limit_count: 0
+rate_limits: []
+note: >-
+  No rate limits are documented because no API is documented. Every developer-facing path on
+  onespot.com (/developers, /developer, /api, /docs) answers HTTP 302 to https://ignitetech.ai/.
+  The api. and developer. subdomains are CNAMEs to onespot.com and inherit the same blanket
+  redirect, so there is no live API host to observe rate-limit response headers on.
+evidence:
+- {url: 'https://onespot.com/developers', status: 302, redirect_to: 'https://ignitetech.ai/'}
+- {url: 'https://api.onespot.com/', status: 302, redirect_to: 'https://ignitetech.ai/'}
+- {url: 'https://developer.onespot.com/', status: 302, redirect_to: 'https://ignitetech.ai/'}

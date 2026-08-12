@@ -1,0 +1,60 @@
+generated: '2026-08-12'
+method: probed
+source: live HTTP probes of onespot.com and api.onespot.com
+host: https://onespot.com
+note: >-
+  No /.well-known/ document is served. Every path on onespot.com and its api./developer./app.
+  subdomains answers HTTP 302 to https://ignitetech.ai/ (the acquirer's marketing homepage), which
+  then returns a 187KB text/html WordPress page. Following redirects yields HTTP 200 for EVERY path
+  probed, including paths that cannot exist — that 200 is a blanket redirect catch-all, not a
+  document. Statuses below are recorded WITHOUT following redirects, which is the real answer from
+  the host. Recorded as an absence: no WellKnown or SecurityTxt pointer is emitted.
+hosts_probed:
+- onespot.com
+- api.onespot.com
+documents:
+- path: /.well-known/security.txt
+  status: 302
+  redirect_to: https://ignitetech.ai/
+  file: null
+- path: /.well-known/openid-configuration
+  status: 302
+  redirect_to: https://ignitetech.ai/
+  file: null
+- path: /.well-known/oauth-authorization-server
+  status: 302
+  redirect_to: https://ignitetech.ai/
+  file: null
+- path: /.well-known/api-catalog
+  status: 302
+  redirect_to: https://ignitetech.ai/
+  file: null
+- path: /.well-known/ai-plugin.json
+  status: 302
+  redirect_to: https://ignitetech.ai/
+  file: null
+- path: /.well-known/agent-card.json
+  status: 302
+  redirect_to: https://ignitetech.ai/
+  file: null
+- path: /.well-known/agent.json
+  status: 302
+  redirect_to: https://ignitetech.ai/
+  file: null
+contract_discovery:
+  note: >-
+    STEP 0b contract discovery run against every onespot.com host. No OpenAPI, Swagger, GraphQL,
+    AsyncAPI, MCP or A2A surface exists. Every candidate path 302s to the acquirer homepage; the
+    followed-200 bodies are all byte-identical HTML (187166 bytes, text/html), so no candidate
+    parses as a specification.
+  paths:
+  - {path: /openapi.json, status: 302}
+  - {path: /openapi.yaml, status: 302}
+  - {path: /swagger.json, status: 302}
+  - {path: /v1/openapi.json, status: 302}
+  - {path: /api-docs, status: 302}
+  - {path: /docs, status: 302}
+  - {path: /llms.txt, status: 302}
+  agent_card: none
+  graphql: none
+  mcp: none
